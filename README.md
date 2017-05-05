@@ -5,7 +5,7 @@ accepting [FastCGI](https://en.wikipedia.org/wiki/FastCGI)
 connections.
 
 It listens by default on port 9001, and expects MapServer map files
-and related deta to be available in a volume mounted on `/data`.
+and related data to be available in a volume mounted on `/data`.
 
 
 ## Usage
@@ -50,7 +50,7 @@ starts a MapServer instance accessible as http://localhost/mapserver/:
           - /some/mapserver/data:/data:ro
 
 In the example above, `/some/nginx.conf` refers to the following Nginx
-configuratin file:
+configuration file:
 
     user nginx;
     worker_processes 1;
