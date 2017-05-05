@@ -1,34 +1,27 @@
 # A FastCGI MapServer instance
 
-This image implements a [MapServer](http://mapserver.org/) instance
-accepting [FastCGI](https://en.wikipedia.org/wiki/FastCGI)
-connections.
+This image implements a [MapServer](http://mapserver.org/) instance accepting [FastCGI](https://en.wikipedia.org/wiki/FastCGI) connections.
 
-It listens by default on port 9001, and expects MapServer map files
-and related data to be available in a volume mounted on `/data`.
+It listens by default on port 9001, and expects MapServer map files and related data to be available in a volume mounted on `/data`.
 
 
 ## Usage
 
-The following will start a MapServer instance listening on port 9001
-for FastCGI connections, and serving MapServer data from the directory
+The following will start a MapServer instance listening on port 9001 for FastCGI connections, and serving MapServer data from the directory
 `/some/mapserver/data`:
 
     $ docker run \
 	    --volume=/some/mapserver/data:/data:ro \
 		carletes/mapserver
 
-If you want to listen on a different port, use the `FCGI_LISTEN_PORT`
-environment variable:
+If you want to listen on a different port, use the `FCGI_LISTEN_PORT` environment variable:
 
     $ docker run \
 	    --volume=/some/mapserver/data:/data:ro \
 		--env=FCGI_LISTEN_PORT=9022 \
 		carletes/mapserver
 
-You will need a web server to expose MapServer to your clients. The
-following [Docker Compose](https://docs.docker.com/compose/) file
-starts a MapServer instance accessible as http://localhost/mapserver/:
+You will need a web server to expose MapServer to your clients. The following [Docker Compose](https://docs.docker.com/compose/) file starts a MapServer instance accessible as http://localhost/mapserver/:
 
     version: "2"
 
@@ -49,8 +42,7 @@ starts a MapServer instance accessible as http://localhost/mapserver/:
         volumes:
           - /some/mapserver/data:/data:ro
 
-In the example above, `/some/nginx.conf` refers to the following Nginx
-configuration file:
+In the example above, `/some/nginx.conf` refers to the following Nginx configuration file:
 
     user nginx;
     worker_processes 1;
@@ -80,8 +72,7 @@ configuration file:
 
 ## Configurable parameters
 
-The following environment variables can set in order to tweak the
-behaviour of MapServer:
+The following environment variables can set in order to tweak the behaviour of MapServer:
 
 | Variable              | Description                                 | Default value |
 |-----------------------|---------------------------------------------|---------------|
