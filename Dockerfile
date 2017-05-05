@@ -30,12 +30,12 @@ RUN chmod 0755 /mapserver
 VOLUME ["/data"]
 
 # User-configurable parameters.
-ENV FCGI_LISTEN_ADDRESS 0.0.0.0
-ENV FCGI_LISTEN_PORT 9001
-ENV FCGI_NPROC 1
-ENV FCGI_BACKLOG 1024
-ENV FCGI_UID mapserver
-ENV FCGI_GID mapserver
+ENV FCGI_LISTEN_ADDRESS=0.0.0.0 \
+    FCGI_LISTEN_PORT=9001 \
+    FCGI_NPROC=1 \
+    FCGI_BACKLOG=1024 \
+    FCGI_UID=mapserver \
+    FCGI_GID=mapserver
 
 # Image metadata.
 
