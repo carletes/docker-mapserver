@@ -13,10 +13,12 @@ RUN awk '$1 ~ "^deb" { $3 = $3 "-backports"; print; exit }' /etc/apt/sources.lis
 RUN groupadd -g 9001 mapserver && \
     useradd -r -d /home/mapserver -m -g mapserver -u 9001 mapserver
 
+ARG MAPSERVER_VERSION
+
 # Install Mapserver from backports
 RUN install_packages -t jessie-backports \
-    cgi-mapserver \
-    mapserver-bin \
+    cgi-mapserver=$MAPSERVER_VERSION-* \
+    mapserver-bin=$MAPSERVER_VERSION-* \
     spawn-fcgi
 
 # Include documentation about this image.
@@ -43,7 +45,6 @@ ARG BUILD_DATE
 ARG IMAGE_NAME
 ARG VCS_REF
 ARG VCS_URL
-ARG VERSION
 
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.description="A FastCGI MapServer instance" \
