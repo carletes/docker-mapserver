@@ -7,8 +7,7 @@ It listens by default on port 9001, and expects MapServer map files and related 
 
 ## Usage
 
-The following will start a MapServer instance listening on port 9001 for FastCGI connections, and serving MapServer data from the directory
-`/some/mapserver/data`:
+The following will start a MapServer instance listening on port 9001 for FastCGI connections, and serving MapServer data from the directory `/some/mapserver/data`:
 
     $ docker run \
 	    --volume=/some/mapserver/data:/data:ro \
