@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -x
+
+IMAGE_NAME="${IMAGE_NAME:-carletes/mapserver}"
+
+docker build \
+       --build-arg=BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ") \
+       --build-arg=IMAGE_NAME=$IMAGE_NAME \
+       --build-arg VCS_REF=$(git rev-parse --short HEAD) \
+       --build-arg=VCS_URL="${VCS_URL:-https://github.com/carletes/docker-mapserver}" \
+       --build-arg=http_proxy="$http_proxy" \
+       --build-arg=https_proxy="$https_proxy" \
+       --build-arg=no_proxy="$no_proxy" \
+       -t $IMAGE_NAME \
+       .
