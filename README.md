@@ -1,5 +1,9 @@
 # A FastCGI MapServer instance
 
+[![](https://images.microbadger.com/badges/version/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own commit badge on microbadger.com")
+
 This image implements a [MapServer](http://mapserver.org/) instance accepting [FastCGI](https://en.wikipedia.org/wiki/FastCGI) connections.
 
 It listens by default on port 9001, and expects MapServer map files and related data to be available in a volume mounted on `/data`.
