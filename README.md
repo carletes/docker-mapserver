@@ -85,3 +85,10 @@ The following environment variables can set in order to tweak the behaviour of M
 | `FCGI_BACKLOG`        | TCP connection backlog for FastCGI requests | 1024          |
 | `FCGI_UID`            | Unix UID of FastCGI process                 | `mapserver`   |
 | `FCGI_GID`            | Unix GID of FastCGI process                 | `mapserver`   |
+
+All [MapServer environment variables](http://mapserver.org/environment_variables.html) may be specified as well. By default this images runs with the following MapServer environment variables:
+
+| MapServer variable | Default value used in this image |
+|--------------------|----------------------------------|
+| `MS_DEBUGLEVEL`    | 0                                |
+| `MS_ERRORFILE`     | `stderr`                         |
