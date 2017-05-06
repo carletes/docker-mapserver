@@ -2,7 +2,7 @@
 
 [![](https://images.microbadger.com/badges/image/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own image badge on microbadger.com")
 
-[![](https://images.microbadger.com/badges/image/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own image badge on microbadger.com")
 
 [![](https://images.microbadger.com/badges/commit/carletes/mapserver.svg)](https://microbadger.com/images/carletes/mapserver "Get your own commit badge on microbadger.com")
 
