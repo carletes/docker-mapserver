@@ -38,7 +38,6 @@ ENV FCGI_LISTEN_ADDRESS=0.0.0.0 \
     FCGI_BACKLOG=1024 \
     FCGI_UID=mapserver \
     FCGI_GID=mapserver \
-    MS_DEBUGLEVEL=0 \
     MS_ERRORFILE=stderr
 
 # Image metadata.
