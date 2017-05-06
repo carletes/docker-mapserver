@@ -24,53 +24,7 @@ If you want to listen on a different port, use the `FCGI_LISTEN_PORT` environmen
 		--env=FCGI_LISTEN_PORT=9022 \
 		carletes/mapserver
 
-You will need a web server to expose MapServer to your clients. The following [Docker Compose](https://docs.docker.com/compose/) file starts a MapServer instance accessible as http://localhost/mapserver/:
-
-    version: "2"
-
-    services:
-      nginx:
-        image: nginx:stable-alpine
-        ports:
-          - "80:80"
-        links:
-          - mapserver
-        volumes:
-          - /some/nginx.conf:/etc/nginx/nginx.conf:ro
-
-      mapserver:
-        image: ecmwf/mapserver
-        expose:
-          - "9001"
-        volumes:
-          - /some/mapserver/data:/data:ro
-
-In the example above, `/some/nginx.conf` refers to the following Nginx configuration file:
-
-    user nginx;
-    worker_processes 1;
-
-    error_log stderr debug;
-
-    events {
-        worker_connections 1024;
-    }
-
-    http {
-        include /etc/nginx/mime.types;
-        default_type application/octet-stream;
-
-        access_log off;
-
-        server {
-            listen 80;
-
-            location /mapserver/ {
-                fastcgi_pass mapserver:9001;
-                include fastcgi_params;
-            }
-        }
-    }
+You will need a web server to expose MapServer to your clients via HTTP. The GitHub repository [carletes/docker-mapserver-example](https://github.com/carletes/docker-mapserver-example) shows a way of doing it.
 
 
 ## Configurable parameters
